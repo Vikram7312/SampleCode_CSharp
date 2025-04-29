@@ -1,0 +1,16 @@
+Console.WriteLine("Enter your word set");
+
+string ToReverse = Console.ReadLine()!;
+
+string reverse = stringRevertMechanism(ToReverse);
+
+Console.WriteLine(reverse);
+
+string stringRevertMechanism(string toReverse)
+{
+    string[] revert = toReverse.Split(new char[] { ' ' });
+
+    Array.Reverse(revert);
+
+    return string.Join(' ',revert);
+}

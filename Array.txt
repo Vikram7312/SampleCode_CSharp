@@ -1,0 +1,36 @@
+namespace Coding.Exercise
+{
+    public class Exercise
+    {
+        public static void Main(string[] args)
+        {
+            PrintNumbers();
+        }
+        public static void PrintNumbers()
+        {
+            int sum;
+            int[,] arrayInt = new int[3,3];
+            int[] value = new int[3];
+            arrayInt[0, 0] = 1;
+            arrayInt[0, 1] = 2;
+            arrayInt[0, 2] = 3;
+            arrayInt[1, 0] = 4;
+            arrayInt[1, 1] = 5;
+            arrayInt[1, 2] = 6;
+            arrayInt[2, 0] = 7;
+            arrayInt[2, 1] = 8;
+            arrayInt[2, 2] = 9;
+
+            for (int i = 0; i < 3; i++)
+            {  
+                for (int j = 0; j < 3; j++)
+                {
+                    value[j] = arrayInt[i, j];
+                }
+                sum = value[0] + value[1] + value[2];
+                Console.WriteLine(sum);
+            }
+            Console.ReadKey();
+        }
+    }
+}
