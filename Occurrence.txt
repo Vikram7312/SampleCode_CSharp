@@ -1,0 +1,38 @@
+
+// resolve warnings on your own
+Console.WriteLine("Enter your word to check occurrence");
+
+//User input, non empty/no null warnings
+string UserIput = Console.ReadLine();
+
+//array to store user input values as single string/one alphabet/value from the entire word as one element of the array 
+string[] occurred = UserIput.ToArray();
+
+//array to store occurred values__once/only one value and no repetitions
+string[] stored = new string[occurred.Length];
+
+int count;
+
+for (int i =0; i<occurred.Length;i++) //to take one value for comparison
+{
+    count = 0;
+
+    //check whether the value has looped once by storing and comparing
+    if (stored.Contains(occurred[i])) 
+    {
+        continue;
+    }
+    else 
+    { 
+        //Use the value and compare with user input and get and print number of counts
+        for (int j = 0; j < occurred.Length; j++)
+        {
+            if (occurred[i] == occurred[j])
+            {
+                count++;
+            }
+        }
+    }
+    Console.WriteLine($"{occurred[i]} is {count} times");
+    stored[i] = occurred[i];
+}
